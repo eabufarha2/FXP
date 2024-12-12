@@ -1,0 +1,84 @@
+.boarder_container {
+  -fx-background-color: #3b364c;
+}
+
+.vb_conatiner {
+  -fx-background-color: #0a0a23;
+  -fx-border-radius: 10px;
+  -fx-background-radius: 10px;
+  -fx-padding: 0 110 0 0;
+}
+
+.left_side {
+  -fx-background-color: #0a0a23;
+  -fx-border-radius: 10px;
+  -fx-background-radius: 10px;
+}
+.left_side .image {
+  -fx-opacity: 0.5;
+}
+
+.right_side .form {
+  -fx-background-color: #0a0a23;
+  -fx-padding: 20;
+  -fx-spacing: 25;
+  
+}
+
+.right_side .form .text-field {
+  -fx-background-color: #3b364c;
+  -fx-text-fill: white;
+  -fx-font-size: 20;
+  -fx-border-radius: 10px;
+  -fx-background-radius: 10px;
+  -fx-pref-height: 60;
+}
+.right_side .form .fields {
+  
+  -fx-spacing: 5;
+}
+
+.right_side .form .name {
+  
+  -fx-spacing: 5;
+}
+
+
+.right_side {
+  -fx-background-color: #0a0a23;
+  -fx-border-radius: 0px 10px 10px 0px;
+  -fx-background-radius: 0px 10px 10px 0px;
+  -fx-alignment: center;
+}
+.right_side .signin {
+  -fx-fill: #551a8b;
+  -fx-font-size: 15;
+  -fx-cursor: hand;
+  -fx-underline: true;
+}
+
+.right_side .form .text_container {
+  -fx-spacing: 10;
+}
+.right_side .form .texts {
+  -fx-fill: white;
+  -fx-font-size: 15;
+}
+
+
+.right_side .form .CreateAccTxt {
+  -fx-fill: white;
+  -fx-font-size: 45;
+}
+.right_side .form .button {
+  -fx-background-color: #6e54b5;
+    -fx-max-width: infinity;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-border-radius: 10px;
+      -fx-background-radius: 10px;
+}
+
+.right_side .form .signInContainer {
+      -fx-spacing: 5;
+}
