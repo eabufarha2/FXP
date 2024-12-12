@@ -1,10 +1,8 @@
 package com.example;
 
-import com.example.ui.SignInView;
-import com.example.ui.SignUpView;
+import com.example.ui.Dashboard;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -12,7 +10,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         stage = primaryStage;
-        stage = new SignInView();
+        stage = new Dashboard();
         stage.show();
         
     }

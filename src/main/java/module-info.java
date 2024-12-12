@@ -1,11 +1,11 @@
 module com.example {
     requires javafx.controls;
     requires javafx.fxml;
-    requires javafx.graphics;
+    requires java.sql;
+    requires org.kordamp.ikonli.javafx;
 
-    // Open the package to JavaFX Reflection
+    requires org.kordamp.ikonli.fontawesome;
     opens com.example to javafx.fxml;
 
-    // Export the package for use outside the module
     exports com.example;
 }

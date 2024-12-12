@@ -1,7 +1,5 @@
 package com.example.ui;
 
-import javafx.scene.layout.BorderPane;
-
 import com.example.components.CustomButtom;
 import com.example.components.CustomField;
 import com.example.components.CustomHBox;
@@ -10,15 +8,11 @@ import com.example.components.CustomText;
 import com.example.components.CustomVBox;
 import com.example.components.LeftSideImage;
 import com.example.controller.SignInController;
-import com.example.controller.SignUpController;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class SignInView extends Stage {
