@@ -8,9 +8,8 @@ public class CustomFont extends FontIcon {
     public CustomFont(FontAwesome icon, String className) {
         super(icon);
         getStyleClass().add(className);
-        
+        getStyleClass().add("Fonts");
 
     }
 
-    
 }

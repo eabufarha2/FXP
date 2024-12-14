@@ -12,6 +12,9 @@ public class SignUpController {
         App.stage = stage;
         App.stage.show();
     }
+    public void signUpClick() {
+        
+    }
 
     
 }

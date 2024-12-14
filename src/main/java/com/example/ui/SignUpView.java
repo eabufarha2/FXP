@@ -68,9 +68,9 @@ public class SignUpView extends Stage {
         CustomField lastNameField = new CustomField("Last name");
         nameContainer.getChildren().addAll(firstNameField, lastNameField);
 
-        CustomField emailField = new CustomField("Email");
+        CustomField userName = new CustomField("Username");
         CustomPassword passwordField = new CustomPassword("Password");
-        fieldsContainer.getChildren().addAll(nameContainer, emailField, passwordField);
+        fieldsContainer.getChildren().addAll(nameContainer, userName, passwordField);
 
         CustomButtom createAccountButton = new CustomButtom("Create Account");
         form.getChildren().addAll(textContainer, fieldsContainer, createAccountButton);

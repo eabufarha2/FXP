@@ -2,6 +2,7 @@
 
 .boarder_container {
   -fx-background-color: #3b364c;
+  
 }
 
 .view_container {
@@ -10,8 +11,22 @@
   -fx-background-radius: 10px;
 }
 
+.content {
+  -fx-background: #0a0a23;
+  -fx-background-color: #0a0a23;
+  -fx-border-radius: 0px 10px 10px 0px;
+  -fx-background-radius: 0px 10px 10px 0px; 
+  
+}
+
+.content .viewport {
+  -fx-background: #0a0a23;
+  -fx-border-radius: 0px 10px 10px 0px;
+  -fx-background-radius: 0px 10px 10px 0px;
+}
+
 .sideBar {
-  -fx-background-color: #6e54b5;
+  -fx-background-color: #28243d; 
   -fx-border-radius: 10px 0 0 10px;
   -fx-background-radius: 10px 0 0 10px;
   -fx-spacing: 80;
@@ -25,8 +40,8 @@
   -fx-fill: White;
   -fx-font-size: 15;
 }
-.sections_container {
-  -fx-spacing: 5;
+.sections_container, .general_section{
+  -fx-spacing: 10;
 }
 .tables_container {
   -fx-spacing: 15;
@@ -38,14 +53,12 @@
 .overview_text,
 .cars_text,
 .employees_text,
-.orders_text {
+.orders_text,
+.settings_text {
   -fx-fill: #c5c0c0ee;
-  -fx-font-size: 15;
+  -fx-font-size: 18;
 }
-.overview_text {
-  -fx-fill: white;
-  -fx-font-size: 15;
-}
+
 
 .overview,
 .services,
@@ -56,20 +69,28 @@
 .orders {
   -fx-spacing: 5;
 }
-.overview_icon,
-.cars_icon,
-.customers_icon,
-.employees_icon,
-.orders_icon,
-.payment_icon,
-.services_icon {
-  -fx-fill: #c5c0c0ee;
-  -fx-font-size: 13;
+
+.services:hover .services_text, .services:hover .services_icon,
+.payment:hover .payment_text, .payment:hover .payment_icon,
+.customers:hover .customers_text, .customers:hover .customers_icon,
+.overview:hover .overview_text, .overview:hover .overview_icon,
+.cars:hover .cars_text, .cars:hover .cars_icon,
+.employees:hover .employees_text, .employees:hover .employees_icon,
+.orders:hover .orders_text, .orders:hover .orders_icon,
+.settings:hover .settings_text, .settings:hover .settings_icon
+{
+  -fx-fill: white;
 }
 
-.overview_icon {
+.Fonts {
+  -fx-fill: #c5c0c0ee;
+  -fx-font-size: 18;
+  
+}
+
+.active {
   -fx-fill: White;
-  -fx-font-size: 13;
+  -fx-font-size: 20;
 }
 .overview,
 .services,
@@ -77,14 +98,20 @@
 .customers,
 .cars,
 .employees,
-.orders {
+.orders,
+.settings {
   -fx-spacing: 10;
 }
 .logout_button {
-  -fx-background-color: 6e54b5;
+  -fx-background-color: #6e54b5;
   -fx-max-width: infinity;
   -fx-text-fill: white;
-  -fx-font-size: 10;
+  -fx-font-size: 15;
   -fx-border-radius: 5px;
   -fx-background-radius: 5px;
 }
+.general_text{
+  -fx-fill: White;
+    -fx-font-size: 15;
+}
+

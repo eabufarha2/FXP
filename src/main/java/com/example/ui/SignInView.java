@@ -16,8 +16,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class SignInView extends Stage {
-
-    private static SignInController signIpController = new SignInController();
+    public static CustomField userName;
+    public static CustomPassword passwordField;
+    public static CustomText errorText;
+    private static SignInController signInController = new SignInController();
 
     public SignInView() {
         BorderPane borderPane = new BorderPane();
@@ -50,17 +52,20 @@ public class SignInView extends Stage {
         CustomText loginTxt = new CustomText("Agent Login", "loginTxt");
 
         CustomVBox fieldsContainer = new CustomVBox("fields");
-        CustomField emailField = new CustomField("Email");
-        CustomPassword passwordField = new CustomPassword("Password");
-        fieldsContainer.getChildren().addAll(emailField, passwordField);
+        userName = new CustomField("Username");
+        passwordField = new CustomPassword("Password");
+        errorText = new CustomText("Invalid username or password", "errorText");
+        errorText.setVisible(false);
+        fieldsContainer.getChildren().addAll(userName, passwordField, errorText);
 
         CustomButtom createAccountButton = new CustomButtom("Sign In");
+        createAccountButton.setOnMouseClicked(e -> signInController.signInClick());
 
         CustomHBox signUp = new CustomHBox("signUpContainer");
         CustomText signUpText = new CustomText("Don't have an account?", "texts");
         CustomText signUpLink = new CustomText("Sign Up", "signup");
 
-        signUpLink.setOnMouseClicked(e -> signIpController.signUpClick());
+        signUpLink.setOnMouseClicked(e -> signInController.signUpClick());
         signUp.getChildren().addAll(signUpText, signUpLink);
         form.getChildren().addAll(loginTxt, fieldsContainer, createAccountButton, signUp);
         rightSide.getChildren().add(form);

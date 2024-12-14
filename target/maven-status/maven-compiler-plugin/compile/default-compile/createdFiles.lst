@@ -13,7 +13,6 @@ com\example\model\Customer.class
 com\example\components\LeftSideImage.class
 com\example\ui\SignInView.class
 com\example\model\Employee.class
-com\example\ui\Dashboard.class
 com\example\config\databaseConfig.class
 com\example\components\CustomButtom.class
 com\example\components\CustomPassword.class

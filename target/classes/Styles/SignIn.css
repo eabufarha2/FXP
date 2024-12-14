@@ -84,3 +84,9 @@
     -fx-border-radius: 10px;
         -fx-background-radius: 10px;
 }
+
+.errorText{
+    -fx-fill: red;
+    -fx-font-size: 15;
+    
+}
