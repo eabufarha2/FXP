@@ -22,8 +22,6 @@ import javafx.stage.Stage;
 
 public class SignUpView extends Stage {
 
-    private static SignUpController signUpController = new SignUpController();
-
     public SignUpView() {
         BorderPane borderPane = new BorderPane();
         Scene scene = new Scene(borderPane, 1820, 980);
@@ -57,7 +55,7 @@ public class SignUpView extends Stage {
         CustomText haveAccountTxt = new CustomText("Already have an account?", "texts");
         CustomText signInLink = new CustomText("Log in", "signin");
 
-        signInLink.setOnMouseClicked(e -> signUpController.logInClick());
+        signInLink.setOnMouseClicked(e -> SignUpController.loginClick());
 
         signInContainer.getChildren().addAll(haveAccountTxt, signInLink);
         textContainer.getChildren().addAll(createAccTxt, signInContainer);
@@ -73,6 +71,13 @@ public class SignUpView extends Stage {
         fieldsContainer.getChildren().addAll(nameContainer, userName, passwordField);
 
         CustomButtom createAccountButton = new CustomButtom("Create Account");
+        createAccountButton.setOnMouseClicked(e -> {
+            SignUpController controller = new SignUpController();
+            controller.createAccountButton(firstNameField,
+                    lastNameField,
+                    userName,
+                    passwordField);
+        });
         form.getChildren().addAll(textContainer, fieldsContainer, createAccountButton);
         rightSide.getChildren().add(form);
 

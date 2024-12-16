@@ -1,61 +1,64 @@
 package com.example.model;
 
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Payment {
+    private final IntegerProperty paymentID = new SimpleIntegerProperty(this, "paymentID");
+    private final IntegerProperty orderID = new SimpleIntegerProperty(this, "orderID");
+    private final ObjectProperty<LocalDate> paymentDate = new SimpleObjectProperty<>(this, "paymentDate");
+    private final StringProperty paymentMethod = new SimpleStringProperty(this, "paymentMethod");
+    private final ObjectProperty<BigDecimal> amount = new SimpleObjectProperty<>(this, "amount");
 
-    private IntegerProperty paymentId;
-    private IntegerProperty orderId;
-    private StringProperty paymentDate;
-    private StringProperty paymentMethod;
-    private DoubleProperty amount;
-
-    public Payment(int paymentId, int orderId, String paymentDate, String paymentMethod, double amount) {
-        this.paymentId = new SimpleIntegerProperty(paymentId);
-        this.orderId = new SimpleIntegerProperty(orderId);
-        this.paymentDate = new SimpleStringProperty(paymentDate);
-        this.paymentMethod = new SimpleStringProperty(paymentMethod);
-        this.amount = new SimpleDoubleProperty(amount);
+    public Payment() {
     }
 
-    public int getPaymentId() {
-        return paymentId.get();
+    public Payment(int paymentID, int orderID, LocalDate paymentDate, String paymentMethod, BigDecimal amount) {
+        setPaymentID(paymentID);
+        setOrderID(orderID);
+        setPaymentDate(paymentDate);
+        setPaymentMethod(paymentMethod);
+        setAmount(amount);
     }
 
-    public void setPaymentId(int paymentId) {
-        this.paymentId.set(paymentId);
+    public int getPaymentID() {
+        return paymentID.get();
     }
 
-    public IntegerProperty paymentIdProperty() {
-        return paymentId;
+    public void setPaymentID(int value) {
+        paymentID.set(value);
     }
 
-    public int getOrderId() {
-        return orderId.get();
+    public IntegerProperty paymentIDProperty() {
+        return paymentID;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId.set(orderId);
+    public int getOrderID() {
+        return orderID.get();
     }
 
-    public IntegerProperty orderIdProperty() {
-        return orderId;
+    public void setOrderID(int value) {
+        orderID.set(value);
     }
 
-    public String getPaymentDate() {
+    public IntegerProperty orderIDProperty() {
+        return orderID;
+    }
+
+    public LocalDate getPaymentDate() {
         return paymentDate.get();
     }
 
-    public void setPaymentDate(String paymentDate) {
-        this.paymentDate.set(paymentDate);
+    public void setPaymentDate(LocalDate value) {
+        paymentDate.set(value);
     }
 
-    public StringProperty paymentDateProperty() {
+    public ObjectProperty<LocalDate> paymentDateProperty() {
         return paymentDate;
     }
 
@@ -63,23 +66,23 @@ public class Payment {
         return paymentMethod.get();
     }
 
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod.set(paymentMethod);
+    public void setPaymentMethod(String value) {
+        paymentMethod.set(value);
     }
 
     public StringProperty paymentMethodProperty() {
         return paymentMethod;
     }
 
-    public double getAmount() {
+    public BigDecimal getAmount() {
         return amount.get();
     }
 
-    public void setAmount(double amount) {
-        this.amount.set(amount);
+    public void setAmount(BigDecimal value) {
+        amount.set(value);
     }
 
-    public DoubleProperty amountProperty() {
+    public ObjectProperty<BigDecimal> amountProperty() {
         return amount;
     }
 }

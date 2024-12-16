@@ -1,6 +1,5 @@
 package com.example;
 
-import com.example.ui.DashboardView;
 import com.example.ui.SignInView;
 
 import javafx.application.Application;
@@ -12,7 +11,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         stage = primaryStage;
-        stage = new DashboardView();
+        stage = new SignInView();
         stage.show();
 
     }

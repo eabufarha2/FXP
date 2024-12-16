@@ -6,47 +6,50 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Customer {
+    private final IntegerProperty customerID = new SimpleIntegerProperty(this, "customerID");
+    private final StringProperty firstName = new SimpleStringProperty(this, "firstName");
+    private final StringProperty lastName = new SimpleStringProperty(this, "lastName");
+    private final StringProperty email = new SimpleStringProperty(this, "email");
+    private final StringProperty phone = new SimpleStringProperty(this, "phone");
+    private final StringProperty address = new SimpleStringProperty(this, "address");
+    private final StringProperty city = new SimpleStringProperty(this, "city");
+    private final StringProperty state = new SimpleStringProperty(this, "state");
+    private final StringProperty zipCode = new SimpleStringProperty(this, "zipCode");
 
-    private IntegerProperty customerId;
-    private StringProperty firstName;
-    private StringProperty lastName;
-    private StringProperty email;
-    private StringProperty phone;
-    private StringProperty address;
-    private StringProperty city;
-    private StringProperty state;
-    private StringProperty zipCode;
-
-    public Customer(int customerId, String firstName, String lastName, String email, String phone, String address, String city, String state, String zipCode) {
-        this.customerId = new SimpleIntegerProperty(customerId);
-        this.firstName = new SimpleStringProperty(firstName);
-        this.lastName = new SimpleStringProperty(lastName);
-        this.email = new SimpleStringProperty(email);
-        this.phone = new SimpleStringProperty(phone);
-        this.address = new SimpleStringProperty(address);
-        this.city = new SimpleStringProperty(city);
-        this.state = new SimpleStringProperty(state);
-        this.zipCode = new SimpleStringProperty(zipCode);
+    public Customer() {
     }
 
-    public int getCustomerId() {
-        return customerId.get();
+    public Customer(int customerID, String firstName, String lastName, String email, String phone, String address,
+            String city, String state, String zipCode) {
+        setCustomerID(customerID);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+        setPhone(phone);
+        setAddress(address);
+        setCity(city);
+        setState(state);
+        setZipCode(zipCode);
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId.set(customerId);
+    public int getCustomerID() {
+        return customerID.get();
     }
 
-    public IntegerProperty customerIdProperty() {
-        return customerId;
+    public void setCustomerID(int value) {
+        customerID.set(value);
+    }
+
+    public IntegerProperty customerIDProperty() {
+        return customerID;
     }
 
     public String getFirstName() {
         return firstName.get();
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName.set(firstName);
+    public void setFirstName(String value) {
+        firstName.set(value);
     }
 
     public StringProperty firstNameProperty() {
@@ -57,8 +60,8 @@ public class Customer {
         return lastName.get();
     }
 
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
+    public void setLastName(String value) {
+        lastName.set(value);
     }
 
     public StringProperty lastNameProperty() {
@@ -69,8 +72,8 @@ public class Customer {
         return email.get();
     }
 
-    public void setEmail(String email) {
-        this.email.set(email);
+    public void setEmail(String value) {
+        email.set(value);
     }
 
     public StringProperty emailProperty() {
@@ -81,8 +84,8 @@ public class Customer {
         return phone.get();
     }
 
-    public void setPhone(String phone) {
-        this.phone.set(phone);
+    public void setPhone(String value) {
+        phone.set(value);
     }
 
     public StringProperty phoneProperty() {
@@ -93,8 +96,8 @@ public class Customer {
         return address.get();
     }
 
-    public void setAddress(String address) {
-        this.address.set(address);
+    public void setAddress(String value) {
+        address.set(value);
     }
 
     public StringProperty addressProperty() {
@@ -105,8 +108,8 @@ public class Customer {
         return city.get();
     }
 
-    public void setCity(String city) {
-        this.city.set(city);
+    public void setCity(String value) {
+        city.set(value);
     }
 
     public StringProperty cityProperty() {
@@ -117,8 +120,8 @@ public class Customer {
         return state.get();
     }
 
-    public void setState(String state) {
-        this.state.set(state);
+    public void setState(String value) {
+        state.set(value);
     }
 
     public StringProperty stateProperty() {
@@ -129,8 +132,8 @@ public class Customer {
         return zipCode.get();
     }
 
-    public void setZipCode(String zipCode) {
-        this.zipCode.set(zipCode);
+    public void setZipCode(String value) {
+        zipCode.set(value);
     }
 
     public StringProperty zipCodeProperty() {

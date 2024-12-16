@@ -1,113 +1,116 @@
 package com.example.model;
 
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Order {
+    private final IntegerProperty orderID = new SimpleIntegerProperty(this, "orderID");
+    private final ObjectProperty<LocalDate> orderDate = new SimpleObjectProperty<>(this, "orderDate");
+    private final IntegerProperty carID = new SimpleIntegerProperty(this, "carID");
+    private final IntegerProperty customerID = new SimpleIntegerProperty(this, "customerID");
+    private final IntegerProperty employeeID = new SimpleIntegerProperty(this, "employeeID");
+    private final IntegerProperty quantity = new SimpleIntegerProperty(this, "quantity", 1);
+    private final ObjectProperty<BigDecimal> totalPrice = new SimpleObjectProperty<>(this, "totalPrice");
 
-    private IntegerProperty orderId;
-    private StringProperty orderDate;
-    private IntegerProperty carId;
-    private IntegerProperty customerId;
-    private IntegerProperty employeeId;
-    private IntegerProperty quantity;
-    private DoubleProperty totalPrice;
-
-    public Order(int orderId, String orderDate, int carId, int customerId, int employeeId, int quantity, double totalPrice) {
-        this.orderId = new SimpleIntegerProperty(orderId);
-        this.orderDate = new SimpleStringProperty(orderDate);
-        this.carId = new SimpleIntegerProperty(carId);
-        this.customerId = new SimpleIntegerProperty(customerId);
-        this.employeeId = new SimpleIntegerProperty(employeeId);
-        this.quantity = new SimpleIntegerProperty(quantity);
-        this.totalPrice = new SimpleDoubleProperty(totalPrice);
+    public Order() {
     }
 
-    public int getOrderId() {
-        return orderId.get();
+    public Order(int orderID, LocalDate orderDate, int carID, int customerID, Integer employeeID, int quantity,
+            BigDecimal totalPrice) {
+        setOrderID(orderID);
+        setOrderDate(orderDate);
+        setCarID(carID);
+        setCustomerID(customerID);
+        if (employeeID != null)
+            setEmployeeID(employeeID);
+        setQuantity(quantity);
+        setTotalPrice(totalPrice);
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId.set(orderId);
+    public int getOrderID() {
+        return orderID.get();
     }
 
-    public IntegerProperty orderIdProperty() {
-        return orderId;
+    public void setOrderID(int value) {
+        orderID.set(value);
     }
 
-    public String getOrderDate() {
+    public IntegerProperty orderIDProperty() {
+        return orderID;
+    }
+
+    public LocalDate getOrderDate() {
         return orderDate.get();
     }
 
-    public void setOrderDate(String orderDate) {
-        this.orderDate.set(orderDate);
+    public void setOrderDate(LocalDate value) {
+        orderDate.set(value);
     }
 
-    public StringProperty orderDateProperty() {
+    public ObjectProperty<LocalDate> orderDateProperty() {
         return orderDate;
     }
 
-    public int getCarId() {
-        return carId.get();
+    public int getCarID() {
+        return carID.get();
     }
 
-    public void setCarId(int carId) {
-        this.carId.set(carId);
+    public void setCarID(int value) {
+        carID.set(value);
     }
 
-    public IntegerProperty carIdProperty() {
-        return carId;
+    public IntegerProperty carIDProperty() {
+        return carID;
     }
 
-    public int getCustomerId() {
-        return customerId.get();
+    public int getCustomerID() {
+        return customerID.get();
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId.set(customerId);
+    public void setCustomerID(int value) {
+        customerID.set(value);
     }
 
-    public IntegerProperty customerIdProperty() {
-        return customerId;
+    public IntegerProperty customerIDProperty() {
+        return customerID;
     }
 
-    public int getEmployeeId() {
-        return employeeId.get();
+    public Integer getEmployeeID() {
+        return employeeID.get() == 0 ? null : employeeID.get();
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId.set(employeeId);
+    public void setEmployeeID(int value) {
+        employeeID.set(value);
     }
 
-    public IntegerProperty employeeIdProperty() {
-        return employeeId;
+    public IntegerProperty employeeIDProperty() {
+        return employeeID;
     }
 
     public int getQuantity() {
         return quantity.get();
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity.set(quantity);
+    public void setQuantity(int value) {
+        quantity.set(value);
     }
 
     public IntegerProperty quantityProperty() {
         return quantity;
     }
 
-    public double getTotalPrice() {
+    public BigDecimal getTotalPrice() {
         return totalPrice.get();
     }
 
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice.set(totalPrice);
+    public void setTotalPrice(BigDecimal value) {
+        totalPrice.set(value);
     }
 
-    public DoubleProperty totalPriceProperty() {
+    public ObjectProperty<BigDecimal> totalPriceProperty() {
         return totalPrice;
     }
 }

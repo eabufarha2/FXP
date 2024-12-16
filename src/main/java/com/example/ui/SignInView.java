@@ -16,11 +16,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class SignInView extends Stage {
-    public static CustomField userName;
-    public static CustomPassword passwordField;
-    public static CustomText errorText;
+    
+    
     private static SignInController signInController = new SignInController();
-
+    
     public SignInView() {
         BorderPane borderPane = new BorderPane();
         Scene scene = new Scene(borderPane, 1820, 980);
@@ -52,14 +51,14 @@ public class SignInView extends Stage {
         CustomText loginTxt = new CustomText("Agent Login", "loginTxt");
 
         CustomVBox fieldsContainer = new CustomVBox("fields");
-        userName = new CustomField("Username");
-        passwordField = new CustomPassword("Password");
-        errorText = new CustomText("Invalid username or password", "errorText");
+        CustomField userName = new CustomField("Username");
+        CustomPassword passwordField = new CustomPassword("Password");
+        CustomText errorText = new CustomText("Invalid username or password", "errorText");
         errorText.setVisible(false);
         fieldsContainer.getChildren().addAll(userName, passwordField, errorText);
 
-        CustomButtom createAccountButton = new CustomButtom("Sign In");
-        createAccountButton.setOnMouseClicked(e -> signInController.signInClick());
+        CustomButtom signinButtom = new CustomButtom("Sign In");
+        signinButtom.setOnMouseClicked(e -> signInController.signInClick(userName, passwordField, errorText));
 
         CustomHBox signUp = new CustomHBox("signUpContainer");
         CustomText signUpText = new CustomText("Don't have an account?", "texts");
@@ -67,7 +66,7 @@ public class SignInView extends Stage {
 
         signUpLink.setOnMouseClicked(e -> signInController.signUpClick());
         signUp.getChildren().addAll(signUpText, signUpLink);
-        form.getChildren().addAll(loginTxt, fieldsContainer, createAccountButton, signUp);
+        form.getChildren().addAll(loginTxt, fieldsContainer, signinButtom, signUp);
         rightSide.getChildren().add(form);
         return rightSide;
     }

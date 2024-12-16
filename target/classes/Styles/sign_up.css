@@ -82,3 +82,9 @@
 .right_side .form .signInContainer {
       -fx-spacing: 5;
 }
+
+.error-text {
+  -fx-fill: red;
+  -fx-font-size: 15;
+
+}

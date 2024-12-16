@@ -8,6 +8,8 @@ import com.example.components.CustomHBox;
 import com.example.components.CustomRegion;
 import com.example.components.CustomText;
 import com.example.components.CustomVBox;
+import com.example.controller.DashboardSidebarController;
+import com.example.controller.SignUpController;
 
 import javafx.geometry.Pos;
 import javafx.scene.layout.HBox;
@@ -69,6 +71,8 @@ public class DashboardSidebar extends CustomVBox {
         settings.getChildren().addAll(settingsIcon, settingsText);
 
         CustomButtom logoutButton = new CustomButtom("Logout", "logout_button");
+        logoutButton.setOnMouseClicked(e -> DashboardSidebarController.logoutClick());
+
 
         generalSection.getChildren().addAll(generalText, settings);
 

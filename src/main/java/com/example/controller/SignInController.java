@@ -1,33 +1,44 @@
 package com.example.controller;
 
 import java.util.List;
-
 import com.example.App;
+import com.example.components.CustomField;
+import com.example.components.CustomPassword;
+import com.example.components.CustomText;
 import com.example.model.UserAccount;
+import com.example.security.PasswordUtils;
 import com.example.ui.DashboardView;
-import com.example.ui.SignInView;
 import com.example.ui.SignUpView;
-import com.example.util.ReadUsers;
+import com.example.util.FXUtils;
+import com.example.util.Users;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class SignInController {
     public void signUpClick() {
-        App.stage.close();
-        Stage stage = new SignUpView();
-        App.stage = stage;
-        App.stage.show();
+        Switcher.switchScene(new SignUpView());
     }
 
-    public void signInClick() {
-        ReadUsers users = new ReadUsers();
-        List<UserAccount> userAccounts = users.userAccounts;
+    public void signInClick(CustomField username, CustomPassword password, CustomText errorText) {
+        FXUtils.resetFieldStyles(username);
+        FXUtils.resetFieldStyles(password);
+        boolean hasError = false;
+
+        if (FXUtils.checkNullField(username)) {
+            hasError = true;
+        }
+        if (FXUtils.checkNullField(password)) {
+            hasError = true;
+        }
+        if (hasError) {
+            return;
+        }
+        Users readUsers = new Users();
+        List<UserAccount> userAccounts = readUsers.userAccounts;
         for (UserAccount userAccount : userAccounts) {
             boolean isAuthenticated = false;
-            if (userAccount.getUsername().equals(SignInView.userName.getText())
-                    && userAccount.getPassword().equals(SignInView.passwordField.getText())) {
+            if (userAccount.getUsername().equals(username.getText())
+                    && userAccount.getPassword().equals(PasswordUtils.hashPassword(password.getText()))) {
                 App.stage.close();
                 Stage stage = new DashboardView();
                 App.stage = stage;
@@ -36,9 +47,9 @@ public class SignInController {
                 return;
             }
             if (!isAuthenticated) {
-                SignInView.userName.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
-                SignInView.passwordField.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
-                SignInView.errorText.setVisible(true);
+                username.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                password.setStyle("-fx-border-color: red; -fx-border-width: 1px;");
+                errorText.setVisible(true);
             }
         }
 

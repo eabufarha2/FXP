@@ -1,48 +1,52 @@
 package com.example.model;
 
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Employee {
+    private final IntegerProperty employeeID = new SimpleIntegerProperty(this, "employeeID");
+    private final StringProperty firstName = new SimpleStringProperty(this, "firstName");
+    private final StringProperty lastName = new SimpleStringProperty(this, "lastName");
+    private final StringProperty position = new SimpleStringProperty(this, "position");
+    private final ObjectProperty<BigDecimal> salary = new SimpleObjectProperty<>(this, "salary");
+    private final ObjectProperty<LocalDate> hireDate = new SimpleObjectProperty<>(this, "hireDate");
 
-    private IntegerProperty employeeId;
-    private StringProperty firstName;
-    private StringProperty lastName;
-    private StringProperty position;
-    private DoubleProperty salary;
-    private StringProperty hireDate;
-
-    public Employee(int employeeId, String firstName, String lastName, String position, double salary, String hireDate) {
-        this.employeeId = new SimpleIntegerProperty(employeeId);
-        this.firstName = new SimpleStringProperty(firstName);
-        this.lastName = new SimpleStringProperty(lastName);
-        this.position = new SimpleStringProperty(position);
-        this.salary = new SimpleDoubleProperty(salary);
-        this.hireDate = new SimpleStringProperty(hireDate);
+    public Employee() {
     }
 
-    public int getEmployeeId() {
-        return employeeId.get();
+    public Employee(int employeeID, String firstName, String lastName, String position, BigDecimal salary,
+            LocalDate hireDate) {
+        setEmployeeID(employeeID);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setPosition(position);
+        setSalary(salary);
+        setHireDate(hireDate);
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId.set(employeeId);
+    public int getEmployeeID() {
+        return employeeID.get();
     }
 
-    public IntegerProperty employeeIdProperty() {
-        return employeeId;
+    public void setEmployeeID(int value) {
+        employeeID.set(value);
+    }
+
+    public IntegerProperty employeeIDProperty() {
+        return employeeID;
     }
 
     public String getFirstName() {
         return firstName.get();
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName.set(firstName);
+    public void setFirstName(String value) {
+        firstName.set(value);
     }
 
     public StringProperty firstNameProperty() {
@@ -53,8 +57,8 @@ public class Employee {
         return lastName.get();
     }
 
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
+    public void setLastName(String value) {
+        lastName.set(value);
     }
 
     public StringProperty lastNameProperty() {
@@ -65,35 +69,35 @@ public class Employee {
         return position.get();
     }
 
-    public void setPosition(String position) {
-        this.position.set(position);
+    public void setPosition(String value) {
+        position.set(value);
     }
 
     public StringProperty positionProperty() {
         return position;
     }
 
-    public double getSalary() {
+    public BigDecimal getSalary() {
         return salary.get();
     }
 
-    public void setSalary(double salary) {
-        this.salary.set(salary);
+    public void setSalary(BigDecimal value) {
+        salary.set(value);
     }
 
-    public DoubleProperty salaryProperty() {
+    public ObjectProperty<BigDecimal> salaryProperty() {
         return salary;
     }
 
-    public String getHireDate() {
+    public LocalDate getHireDate() {
         return hireDate.get();
     }
 
-    public void setHireDate(String hireDate) {
-        this.hireDate.set(hireDate);
+    public void setHireDate(LocalDate value) {
+        hireDate.set(value);
     }
 
-    public StringProperty hireDateProperty() {
+    public ObjectProperty<LocalDate> hireDateProperty() {
         return hireDate;
     }
 }

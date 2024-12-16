@@ -1,51 +1,53 @@
 package com.example.model;
 
-import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import javafx.beans.property.*;
+import java.math.BigDecimal;
+
 public class Car {
+    private final IntegerProperty carID = new SimpleIntegerProperty(this, "carID");
+    private final StringProperty make = new SimpleStringProperty(this, "make");
+    private final StringProperty model = new SimpleStringProperty(this, "model");
+    private final IntegerProperty year = new SimpleIntegerProperty(this, "year");
+    private final ObjectProperty<BigDecimal> price = new SimpleObjectProperty<>(this, "price");
+    private final IntegerProperty stock = new SimpleIntegerProperty(this, "stock", 0);
+    private final StringProperty vin = new SimpleStringProperty(this, "vin");
 
-    private IntegerProperty carId;
-    private StringProperty make;
-    private StringProperty model;
-    private IntegerProperty year;
-    private DoubleProperty price;
-    private IntegerProperty stock;
-    private StringProperty vin;
-
-    public Car(int carId, String make, String model, int year, double price, int stock, String vin) {
-        this.carId = new SimpleIntegerProperty(carId);
-        this.make = new SimpleStringProperty(make);
-        this.model = new SimpleStringProperty(model);
-        this.year = new SimpleIntegerProperty(year);
-        this.price = new SimpleDoubleProperty(price);
-        this.stock = new SimpleIntegerProperty(stock);
-        this.vin = new SimpleStringProperty(vin);
+    public Car() {
     }
 
-    // Getters and Setters using JavaFX properties
-    public int getCarId() {
-        return carId.get();
+    public Car(int carID, String make, String model, int year, BigDecimal price, int stock, String vin) {
+        setCarID(carID);
+        setMake(make);
+        setModel(model);
+        setYear(year);
+        setPrice(price);
+        setStock(stock);
+        setVin(vin);
     }
 
-    public void setCarId(int carId) {
-        this.carId.set(carId);
+    public int getCarID() {
+        return carID.get();
     }
 
-    public IntegerProperty carIdProperty() {
-        return carId;
+    public void setCarID(int value) {
+        carID.set(value);
+    }
+
+    public IntegerProperty carIDProperty() {
+        return carID;
     }
 
     public String getMake() {
         return make.get();
     }
 
-    public void setMake(String make) {
-        this.make.set(make);
+    public void setMake(String value) {
+        make.set(value);
     }
 
     public StringProperty makeProperty() {
@@ -56,8 +58,8 @@ public class Car {
         return model.get();
     }
 
-    public void setModel(String model) {
-        this.model.set(model);
+    public void setModel(String value) {
+        model.set(value);
     }
 
     public StringProperty modelProperty() {
@@ -68,23 +70,23 @@ public class Car {
         return year.get();
     }
 
-    public void setYear(int year) {
-        this.year.set(year);
+    public void setYear(int value) {
+        year.set(value);
     }
 
     public IntegerProperty yearProperty() {
         return year;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price.get();
     }
 
-    public void setPrice(double price) {
-        this.price.set(price);
+    public void setPrice(BigDecimal value) {
+        price.set(value);
     }
 
-    public DoubleProperty priceProperty() {
+    public ObjectProperty<BigDecimal> priceProperty() {
         return price;
     }
 
@@ -92,8 +94,8 @@ public class Car {
         return stock.get();
     }
 
-    public void setStock(int stock) {
-        this.stock.set(stock);
+    public void setStock(int value) {
+        stock.set(value);
     }
 
     public IntegerProperty stockProperty() {
@@ -104,8 +106,8 @@ public class Car {
         return vin.get();
     }
 
-    public void setVin(String vin) {
-        this.vin.set(vin);
+    public void setVin(String value) {
+        vin.set(value);
     }
 
     public StringProperty vinProperty() {
