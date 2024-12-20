@@ -1,0 +1,98 @@
+
+.container{
+    -fx-background-color: #3b364c;
+}
+
+.table-view {
+    -fx-text-fill: white;
+    -fx-background-color: #3b364c;
+    -fx-border-color: #3b364c;
+    -fx-border-width: 10;
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    -fx-font-size: 14px;
+}
+
+.table-view .table-cell {
+    -fx-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    /* Font family */
+    -fx-font-size: 14px;
+    /* Font size */
+    -fx-text-fill: white;
+    /* Text color */
+}
+
+/* Style the table headers */
+.table-view .column-header {
+    -fx-background-color: #0a0a23;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+}
+
+/* Style the header text */
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+}
+
+/* Alternate row colors */
+.table-view .table-row-cell:odd {
+    -fx-background-color: #2e2e3f;
+    -fx-text-fill: white;
+}
+
+.table-view .table-row-cell:even {
+    -fx-background-color: #24243e;
+    -fx-text-fill: white;
+}
+
+/* Highlight selected row */
+.table-view .table-row-cell:filled:selected {
+    -fx-background-color: #6e54b5;
+    -fx-text-fill: white;
+}
+
+/* Style table cells */
+.table-view .table-cell {
+    -fx-padding: 8px;
+    -fx-alignment: CENTER;
+    -fx-border-color: transparent transparent #3b364c transparent;
+    -fx-border-width: 1 1 1 1;
+}
+
+.table-view .table-row-cell:filled:hover .table-cell {
+    -fx-background-color: #bdc3c7;
+}
+
+.table-view .column-carIDCol {
+    -fx-alignment: CENTER;
+}
+
+.table-view .column-makeCol {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-pref-width: 12px;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-background-radius: 6px;
+
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color: #bdc3c7;
+    -fx-pref-height: 20px;
+    -fx-background-radius: 4px;
+
+}
+
+.scroll-bar:vertical .increment-button:hover,
+.scroll-bar:vertical .decrement-button:hover {
+    -fx-background-color: #95a5a6;
+}

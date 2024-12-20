@@ -16,7 +16,5 @@ public class LeftSideImage extends CustomVBox {
         imageView.setFitWidth(720);
         imageView.getStyleClass().add("image");
         getChildren().add(imageView);
-
     }
-
 }

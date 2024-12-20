@@ -14,10 +14,7 @@ import com.example.controller.SignUpController;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Cursor;
 import javafx.scene.Scene;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
 import javafx.stage.Stage;
 
 public class SignUpView extends Stage {
@@ -32,11 +29,9 @@ public class SignUpView extends Stage {
         CustomHBox centerContainer = new CustomHBox("vb_conatiner");
         borderPane.setCenter(centerContainer);
 
-        // Left side VBox with image
         CustomVBox leftSide = new LeftSideImage("left_side", Pos.CENTER);
         leftSide.prefWidthProperty().bind(centerContainer.widthProperty().divide(2));
 
-        // Right side VBox with form
         CustomVBox rightSide = createRightSide();
         rightSide.prefWidthProperty().bind(centerContainer.widthProperty().divide(2));
 
@@ -72,8 +67,7 @@ public class SignUpView extends Stage {
 
         CustomButtom createAccountButton = new CustomButtom("Create Account");
         createAccountButton.setOnMouseClicked(e -> {
-            SignUpController controller = new SignUpController();
-            controller.createAccountButton(firstNameField,
+            SignUpController.createAccountButton(firstNameField,
                     lastNameField,
                     userName,
                     passwordField);

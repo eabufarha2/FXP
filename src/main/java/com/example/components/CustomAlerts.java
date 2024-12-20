@@ -14,5 +14,4 @@ public class CustomAlerts {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
 }

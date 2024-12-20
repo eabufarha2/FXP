@@ -5,15 +5,16 @@ import com.example.components.CustomPassword;
 import com.example.security.ExistingUser;
 import com.example.ui.SignInView;
 import com.example.util.FXUtils;
-import com.example.util.Users;
+import com.example.util.UsersUtil;
 
 public class SignUpController {
+
     public static void loginClick() {
         Switcher.switchScene(new SignInView());
     }
 
-    public void createAccountButton(CustomField firstNameField, CustomField lastNameField, CustomField usernameField,
-            CustomPassword passwordField) {
+    public static void createAccountButton(CustomField firstNameField, CustomField lastNameField,
+            CustomField usernameField, CustomPassword passwordField) {
         FXUtils.resetFieldStyles(firstNameField);
         FXUtils.resetFieldStyles(lastNameField);
         FXUtils.resetFieldStyles(usernameField);
@@ -21,16 +22,22 @@ public class SignUpController {
 
         boolean hasError = false;
 
-        if (FXUtils.checkNullField(lastNameField)) {
+        if (!FXUtils.checkNullField(lastNameField)) {
             hasError = true;
         }
-        if (FXUtils.checkNullField(firstNameField)) {
+        if (!FXUtils.checkNullField(firstNameField)) {
             hasError = true;
         }
-        if (FXUtils.checkNullField(usernameField)) {
+        if (!FXUtils.checkNullField(usernameField)) {
             hasError = true;
         }
-        if (FXUtils.checkNullField(passwordField)) {
+        if (!FXUtils.checkNullField(passwordField)) {
+            hasError = true;
+        }
+        if (!FXUtils.checkAlphaField(firstNameField)) {
+            hasError = true;
+        }
+        if (!FXUtils.checkAlphaField(lastNameField)) {
             hasError = true;
         }
         if (hasError) {
@@ -42,10 +49,9 @@ public class SignUpController {
             return;
         }
 
-        if (Users.insert(firstNameField, lastNameField, usernameField, passwordField)) {
+        if (UsersUtil.insert(firstNameField, lastNameField, usernameField, passwordField)) {
             loginClick();
         }
-
     }
 
 }

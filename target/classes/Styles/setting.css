@@ -1,0 +1,53 @@
+
+.content {
+    -fx-background: #0a0a23;
+    -fx-background-color: #0a0a23;
+    -fx-border-radius: 0px 10px 10px 0px;
+    -fx-background-radius: 0px 10px 10px 0px;
+    -fx-alignment: center;
+  
+
+
+}
+.content .viewport {
+    -fx-background: #0a0a23;
+    -fx-border-radius: 0px 10px 10px 0px;
+    -fx-background-radius: 0px 10px 10px 0px;
+}
+.container{
+    
+    -fx-spacing: 20px;
+    -fx-background-color: red;
+
+}
+
+
+.passwordContainer{
+    
+    -fx-spacing: 10px;
+}
+.currentPasswordContainer, .newPasswordContainer, .confirmPasswordContainer{
+    -fx-spacing: 120px;
+}
+.text-field{
+    
+    
+}
+
+.fullName{
+    -fx-fill: white;
+    -fx-font-size: 40px;
+}
+.username{
+    -fx-fill: white;
+    -fx-font-size: 30px;
+}
+
+.passwordText{
+    -fx-fill: white;
+    -fx-font-size: 30px;
+}
+.currentPasswordText, .newPasswordText, .confirmPasswordText{
+    -fx-fill: white;
+    -fx-font-size: 20px;
+}

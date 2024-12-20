@@ -1,26 +1,20 @@
 package com.example.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
 import javafx.beans.property.*;
-import java.math.BigDecimal;
 
 public class Car {
     private final IntegerProperty carID = new SimpleIntegerProperty(this, "carID");
     private final StringProperty make = new SimpleStringProperty(this, "make");
     private final StringProperty model = new SimpleStringProperty(this, "model");
     private final IntegerProperty year = new SimpleIntegerProperty(this, "year");
-    private final ObjectProperty<BigDecimal> price = new SimpleObjectProperty<>(this, "price");
+    private final DoubleProperty price = new SimpleDoubleProperty(this, "price");
     private final IntegerProperty stock = new SimpleIntegerProperty(this, "stock", 0);
     private final StringProperty vin = new SimpleStringProperty(this, "vin");
 
     public Car() {
     }
 
-    public Car(int carID, String make, String model, int year, BigDecimal price, int stock, String vin) {
+    public Car(int carID, String make, String model, int year, double price, int stock, String vin) {
         setCarID(carID);
         setMake(make);
         setModel(model);
@@ -78,16 +72,16 @@ public class Car {
         return year;
     }
 
-    public BigDecimal getPrice() {
+    public DoubleProperty priceProperty() {
+        return price;
+    }
+
+    public double getPrice() {
         return price.get();
     }
 
-    public void setPrice(BigDecimal value) {
+    public void setPrice(double value) {
         price.set(value);
-    }
-
-    public ObjectProperty<BigDecimal> priceProperty() {
-        return price;
     }
 
     public int getStock() {

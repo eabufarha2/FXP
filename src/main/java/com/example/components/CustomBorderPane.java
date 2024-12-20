@@ -9,5 +9,9 @@ public class CustomBorderPane extends BorderPane {
         setPadding(new Insets(35, 35, 35, 35));
         getStylesheets().add(getClass().getResource(styleSheet).toExternalForm());
     }
-    
+
+    public CustomBorderPane() {
+        setPadding(new Insets(35, 35, 35, 35));
+    }
 }
+ 

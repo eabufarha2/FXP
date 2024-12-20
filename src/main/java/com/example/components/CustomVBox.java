@@ -9,13 +9,13 @@ public class CustomVBox extends VBox {
         getStyleClass().add(className);
         setAlignment(alignment);
     }
+
     public CustomVBox(String className) {
         super();
         getStyleClass().add(className);
     }
-    
+
     public CustomVBox() {
         super();
     }
-
 }

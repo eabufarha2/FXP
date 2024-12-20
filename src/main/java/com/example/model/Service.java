@@ -14,13 +14,13 @@ public class Service {
     private final IntegerProperty customerID = new SimpleIntegerProperty(this, "customerID");
     private final ObjectProperty<LocalDate> serviceDate = new SimpleObjectProperty<>(this, "serviceDate");
     private final StringProperty serviceDescription = new SimpleStringProperty(this, "serviceDescription");
-    private final ObjectProperty<BigDecimal> cost = new SimpleObjectProperty<>(this, "cost");
+    private final DoubleProperty cost = new SimpleDoubleProperty(this, "cost");
 
     public Service() {
     }
 
     public Service(int serviceID, int carID, int customerID, LocalDate serviceDate, String serviceDescription,
-            BigDecimal cost) {
+            Double cost) {
         setServiceID(serviceID);
         setCarID(carID);
         setCustomerID(customerID);
@@ -89,15 +89,15 @@ public class Service {
         return serviceDescription;
     }
 
-    public BigDecimal getCost() {
+    public double getCost() {
         return cost.get();
     }
 
-    public void setCost(BigDecimal value) {
+    public void setCost(double value) {
         cost.set(value);
     }
 
-    public ObjectProperty<BigDecimal> costProperty() {
+    public DoubleProperty costProperty() {
         return cost;
     }
 }

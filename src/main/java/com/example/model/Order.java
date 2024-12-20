@@ -1,8 +1,9 @@
 package com.example.model;
 
 import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.*;
+import javafx.beans.property.SimpleObjectProperty;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

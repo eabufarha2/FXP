@@ -13,12 +13,12 @@ public class Payment {
     private final IntegerProperty orderID = new SimpleIntegerProperty(this, "orderID");
     private final ObjectProperty<LocalDate> paymentDate = new SimpleObjectProperty<>(this, "paymentDate");
     private final StringProperty paymentMethod = new SimpleStringProperty(this, "paymentMethod");
-    private final ObjectProperty<BigDecimal> amount = new SimpleObjectProperty<>(this, "amount");
+    private final DoubleProperty amount = new SimpleDoubleProperty(this, "amount");
 
     public Payment() {
     }
 
-    public Payment(int paymentID, int orderID, LocalDate paymentDate, String paymentMethod, BigDecimal amount) {
+    public Payment(int paymentID, int orderID, LocalDate paymentDate, String paymentMethod, double amount) {
         setPaymentID(paymentID);
         setOrderID(orderID);
         setPaymentDate(paymentDate);
@@ -74,15 +74,15 @@ public class Payment {
         return paymentMethod;
     }
 
-    public BigDecimal getAmount() {
+    public Double getAmount() {
         return amount.get();
     }
 
-    public void setAmount(BigDecimal value) {
+    public void setAmount(double value) {
         amount.set(value);
     }
 
-    public ObjectProperty<BigDecimal> amountProperty() {
+    public DoubleProperty amountProperty() {
         return amount;
     }
 }

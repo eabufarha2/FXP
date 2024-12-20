@@ -16,10 +16,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class SignInView extends Stage {
-    
-    
-    private static SignInController signInController = new SignInController();
-    
+
     public SignInView() {
         BorderPane borderPane = new BorderPane();
         Scene scene = new Scene(borderPane, 1820, 980);
@@ -30,11 +27,9 @@ public class SignInView extends Stage {
         CustomHBox centerContainer = new CustomHBox("vb_conatiner");
         borderPane.setCenter(centerContainer);
 
-        // Left side VBox with image
         CustomVBox leftSide = new LeftSideImage("left_side", Pos.CENTER);
         leftSide.prefWidthProperty().bind(centerContainer.widthProperty().divide(2));
 
-        // Right side VBox with form
         CustomVBox rightSide = createRightSide();
         rightSide.prefWidthProperty().bind(centerContainer.widthProperty().divide(2));
 
@@ -58,13 +53,13 @@ public class SignInView extends Stage {
         fieldsContainer.getChildren().addAll(userName, passwordField, errorText);
 
         CustomButtom signinButtom = new CustomButtom("Sign In");
-        signinButtom.setOnMouseClicked(e -> signInController.signInClick(userName, passwordField, errorText));
+        signinButtom.setOnMouseClicked(e -> SignInController.signInClick(userName, passwordField, errorText));
 
         CustomHBox signUp = new CustomHBox("signUpContainer");
         CustomText signUpText = new CustomText("Don't have an account?", "texts");
         CustomText signUpLink = new CustomText("Sign Up", "signup");
 
-        signUpLink.setOnMouseClicked(e -> signInController.signUpClick());
+        signUpLink.setOnMouseClicked(e -> SignInController.signUpClick());
         signUp.getChildren().addAll(signUpText, signUpLink);
         form.getChildren().addAll(loginTxt, fieldsContainer, signinButtom, signUp);
         rightSide.getChildren().add(form);

@@ -11,9 +11,8 @@ public class CustomText extends Text {
     public CustomText(String text) {
         super(text);
     }
-    
+
     public CustomText() {
         super();
     }
-    
 }

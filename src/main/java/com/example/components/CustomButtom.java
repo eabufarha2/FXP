@@ -8,11 +8,10 @@ public class CustomButtom extends Button {
         super(text);
         setCursor(Cursor.HAND);
     }
-    
+
     public CustomButtom(String text, String className) {
         super(text);
         getStyleClass().add(className);
         setCursor(Cursor.HAND);
     }
-    
 }

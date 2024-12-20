@@ -1,0 +1,100 @@
+
+
+.sideBar {
+    -fx-background-color: #28243d;
+    -fx-border-radius: 10px 0 0 10px;
+    -fx-background-radius: 10px 0 0 10px;
+    -fx-spacing: 80;
+    -fx-padding: 20;
+}
+
+.title {
+    -fx-fill: White;
+    -fx-font-size: 25;
+}
+
+.menu {
+    -fx-fill: White;
+    -fx-font-size: 15;
+}
+
+.sections_container,
+.general_section {
+    -fx-spacing: 10;
+}
+
+.tables_container {
+    -fx-spacing: 15;
+}
+
+.services_text,
+.payment_text,
+.customers_text,
+.overview_text,
+.cars_text,
+.employees_text,
+.orders_text,
+.settings_text {
+    -fx-fill: #aaa4a485;
+    -fx-font-size: 18;
+    
+}
+
+
+.services:hover .services_text,
+.services:hover .services_icon,
+.payment:hover .payment_text,
+.payment:hover .payment_icon,
+.customers:hover .customers_text,
+.customers:hover .customers_icon,
+.overview:hover .overview_text,
+.overview:hover .overview_icon,
+.cars:hover .cars_text,
+.cars:hover .cars_icon,
+.employees:hover .employees_text,
+.employees:hover .employees_icon,
+.orders:hover .orders_text,
+.orders:hover .orders_icon,
+.settings:hover .settings_text,
+.settings:hover .settings_icon {
+    -fx-fill: white;
+    
+}
+
+.Fonts {
+    -fx-fill: #aaa4a485;
+    -fx-font-size: 18;
+
+}
+
+.active {
+    -fx-fill: White;
+    -fx-font-size: 20;
+    -fx-cursor: default;
+}
+
+.overview,
+.services,
+.payment,
+.customers,
+.cars,
+.employees,
+.orders,
+.settings {
+    -fx-spacing: 10;
+    -fx-cursor: hand;
+}
+
+.logout_button {
+    -fx-background-color: #6e54b5;
+    -fx-max-width: infinity;
+    -fx-text-fill: white;
+    -fx-font-size: 15;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.general_text {
+    -fx-fill: White;
+    -fx-font-size: 15;
+}

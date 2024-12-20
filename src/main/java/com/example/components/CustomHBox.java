@@ -9,14 +9,13 @@ public class CustomHBox extends HBox {
         getStyleClass().add(className);
         setAlignment(alignment);
     }
-    
+
     public CustomHBox(String className) {
         super();
         getStyleClass().add(className);
     }
-    
+
     public CustomHBox() {
         super();
     }
-
 }

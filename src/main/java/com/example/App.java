@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.ui.DashboardView;
 import com.example.ui.SignInView;
 
 import javafx.application.Application;

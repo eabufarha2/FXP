@@ -82,7 +82,7 @@
     -fx-max-width: infinity;
     -fx-text-fill: white;
     -fx-border-radius: 10px;
-        -fx-background-radius: 10px;
+    -fx-background-radius: 10px;
 }
 
 .errorText{

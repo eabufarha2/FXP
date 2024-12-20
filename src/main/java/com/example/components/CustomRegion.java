@@ -8,5 +8,4 @@ public class CustomRegion extends Region {
     public CustomRegion() {
         HBox.setHgrow(this, Priority.ALWAYS);
     }
-
 }

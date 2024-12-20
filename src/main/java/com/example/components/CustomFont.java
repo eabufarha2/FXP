@@ -9,7 +9,5 @@ public class CustomFont extends FontIcon {
         super(icon);
         getStyleClass().add(className);
         getStyleClass().add("Fonts");
-
     }
-
 }
